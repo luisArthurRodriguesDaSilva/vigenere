@@ -17,5 +17,7 @@ int main() {
         a.processoC();
         a.misturar();
 
+        cout << "________________________________________" << endl;
+
     }
 }
