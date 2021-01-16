@@ -1,9 +1,9 @@
-#include <iostream>
-#include "koé.h"
+ï»¿#include <iostream>
+#include "koï¿½.h"
 using namespace std;
 
 int main() {
-    koé a;
+    koï¿½ a;
 
     while (1)
     {
@@ -21,4 +21,4 @@ int main() {
 
     }
 }
-//falta o espaço duenç
+//falta o espaÃ§o duen
