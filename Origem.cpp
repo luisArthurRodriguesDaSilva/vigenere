@@ -8,8 +8,8 @@ int main() {
     while (1)
     {
         cout << endl;
-        cout << "palavra:";   cin >> a.palavra;    cout << endl;
-        cout << "chave:";     cin >> a.chave;      cout << endl;
+        cout << "palavra:";   cin.getline(a.palavra,sizeof(a.palavra));    cout << endl;  //char input[100];    cin.getline(input, sizeof(input));
+        cout << "chave:";     cin.getline(a.chave, sizeof(a.chave));      cout << endl;
         a.verTamP();
         a.verTamC();
 
@@ -21,4 +21,4 @@ int main() {
 
     }
 }
-//falta o espaço duença
+//falta o espaço duenç

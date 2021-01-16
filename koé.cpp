@@ -50,7 +50,7 @@ void koé::misturar() {
     v = 0;
     for (j = 0; j < tamPalavra; j++) {
         resultadoN[j] = (palavraN[j] + chaveN[ (j-v)% tamChave]) % 26;
-        if (palavra[j] == ',') { cout << " ";    v++; }
+        if (palavra[j] == ' ') { cout << " ";    v++; }
         else cout << tabelado2[resultadoN[j]];
     }
     cout << endl;
