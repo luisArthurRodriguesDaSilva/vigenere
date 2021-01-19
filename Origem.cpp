@@ -1,9 +1,9 @@
 ﻿#include <iostream>
-#include "ko�.h"
+#include "koé.h"
 using namespace std;
 
 int main() {
-    ko� a;
+    koé a;
 
     while (1)
     {
