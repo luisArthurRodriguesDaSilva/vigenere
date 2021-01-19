@@ -55,3 +55,15 @@ void koé::misturar() {
     }
     cout << endl;
 }
+
+void koé::misturarD()
+{
+    for (j = 0; j < tamPalavra; j++) {
+
+        resultadoN[j] = (palavraN[j] - chaveN[(j - v) % tamChave]);
+        if (resultadoN < 0) { resultadoN[j] = 27 - resultadoN[j]; }
+        if (palavra[j] == ' ') { cout << " ";    v++; }
+        else cout << tabelado2[resultadoN[j]];
+    }
+    cout << endl;
+}
