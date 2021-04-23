@@ -1,83 +1,41 @@
-#include <iostream>
+﻿#include <iostream>
+#include "koé.h"
 using namespace std;
 
-
-char resultado[100];
-char tabelado[26]{ 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' };/*','*/
-//enum letras {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z};
-
-
-int x, i,j, tamChave, tamPalavra;
-
-char palavra[100];
-char chave[100];
-int  chaveN[100], palavraN[100],resultadoN[100];
-
-
-
-void verTamP();
-void verTamC();
-void processoP();
-void processoC();
-void misturar();
-
 int main() {
+    koé a;
+    char metodo;
+    int turnos=0;
+    char descarteProBug[50];
     while (1)
     {
         cout << endl;
-        cout << "palavra:";   cin >> palavra;    cout << endl;
-        cout << "chave:";     cin >> chave;      cout << endl;
-        verTamP();
-        verTamC();
+       /* if (turnos > 0) {
+            cout << "||"; cin >> descarteProBug;
+        }*/
 
-        processoP();
-        processoC();
-        misturar();
+        cout << "descrip ou crip" << endl;
+        cout << "    d   ou c" << endl;
+        turnos++;
+        cin.get(metodo);
+        // system("cls");
+        
+        cin.getline(descarteProBug, sizeof(descarteProBug));
+        cout << "entrada:";   cin.getline(a.palavra,sizeof(a.palavra));    cout << endl;  //char input[100];    cin.getline(input, sizeof(input));
+        cout << "chave:";     cin.getline(a.chave, sizeof(a.chave));      cout << endl;
+        
+        a.verTamP();
+        a.verTamC();
+
+        a.processoP();
+        a.processoC();
+        
+       
+        if (metodo == 'c')a.misturar();
+        else a.misturarD();
+
+        cout << "________________________________________" << endl;
 
     }
 }
-
-
-void verTamP() {
-    i = 0;
-    while (palavra[i] != '\0') { i++;   /*cout << i << endl;*/ }
-    tamPalavra = i;
-}
-void verTamC() {
-    i = 0;
-    while (chave[i] != '\0') { i++;   /*cout << i << endl;*/ }
-    tamChave = i;
-
-}
-
-void processoC() {
-    for (j = 0; j < tamChave; j++) {
-       for(i=0;i<26;i++) {
-            if (chave[j] == tabelado[i]) {
-                chaveN[j] = i;
-              /* cout << "chaveN[" << j << "]=" << i << endl;*/
-            }
-        }
-    }
-}
-
-void processoP(){
-    for (j = 0; j < tamPalavra; j++) {
-        for(i=0;i<26;i++) {
-            if (palavra[j] == tabelado[i]) {
-                palavraN[j] = i;
-                /*cout << "palavraN[" << j << "]=" << i << endl;*/
-            }
-
-        }
-    }
-}
-
-void misturar(){
-    cout << "resultado:";
-    for (j = 0; j < tamPalavra; j++) {
-        resultadoN[j] = (palavraN[j] + chaveN[j % tamChave]) % 26;
-        cout<< tabelado[resultadoN[j]];
-    }
-    cout << endl;
-}
+//falta o espaço duen
